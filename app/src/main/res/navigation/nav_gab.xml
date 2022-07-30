@@ -39,5 +39,8 @@
         <action
             android:id="@+id/action_favoriteFragment_to_quadrinhosPersonagensRickAndMortyFragment"
             app:destination="@id/quadrinhosPersonagensRickAndMortyFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_detalhesFragment"
+            app:destination="@id/detalhesFragment" />
     </fragment>
 </navigation>
