@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_gab"
+    app:startDestination="@id/quadrinhosPersonagensRickAndMortyFragment">
+
+    <fragment
+        android:id="@+id/quadrinhosPersonagensRickAndMortyFragment"
+        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.quadrinhos.view.QuadrinhosPersonagensRickAndMortyFragment"
+        android:label="Rick and Morty"
+        tools:layout="@layout/fragment_quadrinhos_personagens_rick_and_morty" >
+        <action
+            android:id="@+id/action_quadrinhosPersonagensRickAndMortyFragment_to_detalhesFragment"
+            app:destination="@id/detalhesFragment" />
+        <action
+            android:id="@+id/action_quadrinhosPersonagensRickAndMortyFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.detalhes.view.DetalhesFragment"
+        android:label="fragment_detalhes"
+        tools:layout="@layout/fragment_detalhes" >
+        <action
+            android:id="@+id/action_detalhesFragment_to_quadrinhosPersonagensRickAndMortyFragment"
+            app:destination="@id/quadrinhosPersonagensRickAndMortyFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.favorite.view.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_quadrinhosPersonagensRickAndMortyFragment"
+            app:destination="@id/quadrinhosPersonagensRickAndMortyFragment" />
+    </fragment>
+</navigation>

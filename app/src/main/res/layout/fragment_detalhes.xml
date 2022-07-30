@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_escuro"
+    tools:context=".ui.detalhes.view.DetalhesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/azul_escuro">
+
+
+    <ImageView
+        android:id="@+id/ivDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_300dp"
+        android:contentDescription="@string/detalhe_personagem"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rick_morty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNamePersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:text="Nome: "
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetalhe" />
+
+    <TextView
+        android:id="@+id/tvNameFieldPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/marginStart_10dp"
+        android:text="Nome Personagem"
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvNamePersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetalhe" />
+
+    <TextView
+        android:id="@+id/tvStatusPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Status: "
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvNamePersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvNamePersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvNamePersonagem" />
+
+    <TextView
+        android:id="@+id/tvStatusFieldPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Status Personagem"
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvNameFieldPersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvNameFieldPersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameFieldPersonagem" />
+
+    <TextView
+        android:id="@+id/tvSpeciesPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Espécie: "
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvStatusPersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvStatusPersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatusPersonagem" />
+
+    <TextView
+        android:id="@+id/tvSpeciesFieldPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Especie Pesrsonagem"
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvStatusFieldPersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvStatusFieldPersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatusFieldPersonagem" />
+
+    <TextView
+        android:id="@+id/tvGenderPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Genêro: "
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvSpeciesPersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvSpeciesPersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeciesPersonagem" />
+
+    <TextView
+        android:id="@+id/tvGenderFieldPersonagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16dp"
+        android:text="Genero Personagem"
+        android:textColor="@color/branco"
+        android:textSize="@dimen/size_15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvSpeciesFieldPersonagem"
+        app:layout_constraintStart_toStartOf="@+id/tvSpeciesFieldPersonagem"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeciesFieldPersonagem" />
+
+
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="@dimen/sizeFavorito_40dp"
+        android:layout_height="@dimen/sizeFavorito_40dp"
+        android:layout_margin="@dimen/margin_16dp"
+        android:contentDescription="@string/estrela_favorito"
+        android:foregroundGravity="right"
+        android:src="@drawable/ic_star_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetalhe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

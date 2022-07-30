@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvItemListaPersonagens"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/widget"
+        android:background="@color/azul_escuro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivRick"
+            android:layout_width="@dimen/size_150"
+            android:layout_height="@dimen/size_150"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rick_morty"
+            android:contentDescription="@string/imagem_personagem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nomePersonagens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_10dp"
+            android:text="NomePersonagens"
+            android:textStyle="bold"
+            android:textColor="@color/branco"
+            app:layout_constraintEnd_toEndOf="@+id/ivRick"
+            app:layout_constraintStart_toStartOf="@+id/ivRick"
+            app:layout_constraintTop_toBottomOf="@+id/ivRick" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
