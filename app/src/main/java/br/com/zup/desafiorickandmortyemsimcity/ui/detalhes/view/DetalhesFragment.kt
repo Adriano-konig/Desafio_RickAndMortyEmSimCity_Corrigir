@@ -13,9 +13,7 @@ import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.desafiorickandmortyemsimcity.R
 import br.com.zup.desafiorickandmortyemsimcity.data.model.PersonagensResult
 import br.com.zup.desafiorickandmortyemsimcity.databinding.FragmentDetalhesBinding
-import br.com.zup.desafiorickandmortyemsimcity.ui.JPEG
 import br.com.zup.desafiorickandmortyemsimcity.ui.PERSONAGEM_KEY
-import br.com.zup.desafiorickandmortyemsimcity.ui.URL_BASE_IMG
 import br.com.zup.desafiorickandmortyemsimcity.ui.detalhes.viewmodel.DetalheViewModel
 import br.com.zup.desafiorickandmortyemsimcity.ui.favorite.viewmodel.FavoriteViewModel
 import br.com.zup.desafiorickandmortyemsimcity.ui.home.view.HomeActivity
@@ -47,17 +45,11 @@ class DetalhesFragment : Fragment() {
         super.onResume()
         val personagem = pegarPersonagens()
         personagem?.let {
-            getData(it)
             clickfavorito(it)
+            getData(it)
         }
         initObserve(personagem)
     }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-
-//        getData()
-  //  }
 
     private fun clickfavorito(personagens: PersonagensResult){
         binding.ivFavorite.setOnClickListener {
@@ -106,10 +98,6 @@ class DetalhesFragment : Fragment() {
 
 
     private fun getData(personagens: PersonagensResult){
-//        val personagem = arguments?.getParcelable<PersonagensResult>(PERSONAGEM_KEY)
-//        if (personagem != null){
-//            favorito(personagem)
-//        }
         personagens.apply {
             Picasso.get().load(image ).into(binding.ivDetalhe)
             binding.tvNameFieldPersonagem.text = name

@@ -21,7 +21,7 @@ class PersonagenUseCase(application: Application) {
         }
     }
 
-    suspend fun getAllPersonagem():ViewState<List<PersonagensResult>>{
+    fun getAllPersonagem():ViewState<List<PersonagensResult>>{
         return try {
             val personagem = personagensRepository.getAllPersonagens()
             if (personagem.isEmpty()){
@@ -34,7 +34,7 @@ class PersonagenUseCase(application: Application) {
         }
     }
 
-    suspend fun getAllFavoritoPersonagens(): ViewState<List<PersonagensResult>>{
+    fun getAllFavoritoPersonagens(): ViewState<List<PersonagensResult>>{
         return try {
             val personagem = personagensRepository.getAllFavorito()
             if (personagem.isEmpty()){
@@ -47,7 +47,7 @@ class PersonagenUseCase(application: Application) {
         }
     }
 
-    suspend fun updateFavoritoPersonagens(personagem: PersonagensResult): ViewState<PersonagensResult>{
+    fun updateFavoritoPersonagens(personagem: PersonagensResult): ViewState<PersonagensResult>{
         return try {
             personagensRepository.updateFavoritoPersonagens(personagem)
             ViewState.Success(personagem)

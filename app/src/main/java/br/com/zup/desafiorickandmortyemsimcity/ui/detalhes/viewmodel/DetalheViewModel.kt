@@ -2,7 +2,6 @@ package br.com.zup.desafiorickandmortyemsimcity.ui.detalhes.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.zup.desafiorickandmortyemsimcity.data.model.PersonagensResult
 import br.com.zup.desafiorickandmortyemsimcity.domain.model.SingleLiveEvent

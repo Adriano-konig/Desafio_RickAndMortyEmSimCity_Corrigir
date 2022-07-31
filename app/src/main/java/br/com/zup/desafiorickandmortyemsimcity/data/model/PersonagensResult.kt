@@ -1,7 +1,5 @@
 package br.com.zup.desafiorickandmortyemsimcity.data.model
 
-
-
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey

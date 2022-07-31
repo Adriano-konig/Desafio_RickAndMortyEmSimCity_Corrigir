@@ -34,7 +34,6 @@ class QuadrinhosPersonagensRickAndMortyFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding =
             FragmentQuadrinhosPersonagensRickAndMortyBinding.inflate(inflater, container, false)
         return binding.root
@@ -75,17 +74,6 @@ class QuadrinhosPersonagensRickAndMortyFragment : Fragment() {
         }
     }
 }
-
-//        viewmodel.loading.observe(this.viewLifecycleOwner) {
-//            when (it) {
-//                is ViewState.Loading -> {
-//                    binding.pbLoading.isVisible = it.loading == true
-//                }
-//                else -> {}
-//            }
-//        }
-//    }
-
         private fun setUpRvPersonagens() {
             initObserver()
             binding.rvPersonagens.adapter = adapter

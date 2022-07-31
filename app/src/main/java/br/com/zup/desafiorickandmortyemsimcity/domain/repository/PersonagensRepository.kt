@@ -17,9 +17,9 @@ class PersonagensRepository(private val personagemDao: PersonagemDao) {
         return RetrofitService.apiService.getAllPersonagensNetwork()
     }
 
-    suspend fun getAllFavorito(): List<PersonagensResult> = personagemDao.getAllFavoritoPersonagem()
+    fun getAllFavorito(): List<PersonagensResult> = personagemDao.getAllFavoritoPersonagem()
 
-    suspend fun updateFavoritoPersonagens(personagem: PersonagensResult){
+    fun updateFavoritoPersonagens(personagem: PersonagensResult){
         personagemDao.updateFavoritoPersonagens(personagem)
     }
 }
