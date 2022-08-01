@@ -10,4 +10,6 @@
     <dimen name="sizeFavorito_40dp">40dp</dimen>
     <dimen name="size_150">150dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="height_820">820dp</dimen>
+    <dimen name="width_471">471dp</dimen>
 </resources>
