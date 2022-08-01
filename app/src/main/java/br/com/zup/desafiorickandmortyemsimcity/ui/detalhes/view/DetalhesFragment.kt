@@ -89,7 +89,7 @@ class DetalhesFragment : Fragment() {
     }
 
     private fun updateFavorito(personagens: PersonagensResult){
-        favoriteViewModel.disfavorMovie(personagens)
+        favoriteViewModel.disfavorPersonagens(personagens)
     }
 
 

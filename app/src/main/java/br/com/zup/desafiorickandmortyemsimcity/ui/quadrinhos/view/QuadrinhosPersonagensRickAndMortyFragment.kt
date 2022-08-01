@@ -42,7 +42,7 @@ class QuadrinhosPersonagensRickAndMortyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRvPersonagens()
-        favoriteDePersonagens()
+        irFavoriteDePersonagens()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +90,7 @@ class QuadrinhosPersonagensRickAndMortyFragment : Fragment() {
             )
         }
 
-    private fun favoriteDePersonagens(){
+    private fun irFavoriteDePersonagens(){
         binding.floating.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(
                 R.id.action_quadrinhosPersonagensRickAndMortyFragment_to_favoriteFragment

@@ -15,13 +15,8 @@ class HomeActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(binding.container.id) as NavHostFragment
-        val navController = navHostFragment.navController
-        NavigationUI.setupActionBarWithNavController(this, navController)
-
-
+        supportActionbar()
+        iniciarNavegacao()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -31,6 +26,18 @@ class HomeActivity : AppCompatActivity(){
         }
         return super.onOptionsItemSelected(item)
     }
+
+    private fun supportActionbar(){
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+    }
+
+   private fun iniciarNavegacao(){
+       val navHostFragment =
+           supportFragmentManager.findFragmentById(binding.container.id) as NavHostFragment
+       val navController = navHostFragment.navController
+       NavigationUI.setupActionBarWithNavController(this, navController)
+    }
+
 
 
 

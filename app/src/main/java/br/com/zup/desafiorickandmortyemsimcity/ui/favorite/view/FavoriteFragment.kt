@@ -41,7 +41,7 @@ class FavoriteFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         initObserver()
-        favoriteViewModel.getAllMoviesFavorited()
+        favoriteViewModel.getAllPersonagensFavorited()
         exibirRecyclerView()
     }
 
