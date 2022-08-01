@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.desafiorickandmortyemsimcity.R
 import br.com.zup.desafiorickandmortyemsimcity.data.model.PersonagensResult
 import br.com.zup.desafiorickandmortyemsimcity.databinding.FragmentDetalhesBinding
+import br.com.zup.desafiorickandmortyemsimcity.ui.DESFAVORITADO
+import br.com.zup.desafiorickandmortyemsimcity.ui.FAVORITADO_SUCESSO
 import br.com.zup.desafiorickandmortyemsimcity.ui.PERSONAGEM_KEY
-import br.com.zup.desafiorickandmortyemsimcity.ui.detalhes.viewmodel.DetalheViewModel
 import br.com.zup.desafiorickandmortyemsimcity.ui.favorite.viewmodel.FavoriteViewModel
 import br.com.zup.desafiorickandmortyemsimcity.ui.home.view.HomeActivity
 import com.squareup.picasso.Picasso
@@ -26,10 +25,6 @@ class DetalhesFragment : Fragment() {
 
     private val favoriteViewModel: FavoriteViewModel by lazy {
         ViewModelProvider(this)[FavoriteViewModel::class.java]
-    }
-
-    private val detalheViewModel: DetalheViewModel by lazy {
-        ViewModelProvider(this)[DetalheViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -46,7 +41,7 @@ class DetalhesFragment : Fragment() {
         val personagem = pegarPersonagens()
         personagem?.let {
             clickfavorito(it)
-            getData(it)
+            exibirData(it)
         }
         initObserve(personagem)
     }
@@ -55,6 +50,20 @@ class DetalhesFragment : Fragment() {
         binding.ivFavorite.setOnClickListener {
             personagens.isFavorite = !personagens.isFavorite
             updateFavorito(personagens)
+            exibirData(personagens)
+
+            if (personagens.isFavorite){
+                Toast.makeText(
+                    context,
+                    FAVORITADO_SUCESSO,
+                    Toast.LENGTH_LONG).show()
+            }else{
+                Toast.makeText(
+                    context,
+                    DESFAVORITADO,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 
@@ -62,19 +71,6 @@ class DetalhesFragment : Fragment() {
         favoriteViewModel.personagemListFavoriteState.observe(this){
             personagens?.let {
                 personagensStatus(it)
-
-                if (it.isFavorite){
-                    Toast.makeText(
-                        context,
-                        "${it.name} esta favoritado com sucesso",
-                        Toast.LENGTH_LONG).show()
-                }else{
-                    Toast.makeText(
-                        context,
-                        "${it.name} está desfavoritado",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
             }
         }
     }
@@ -97,13 +93,14 @@ class DetalhesFragment : Fragment() {
     }
 
 
-    private fun getData(personagens: PersonagensResult){
+    private fun exibirData(personagens: PersonagensResult){
         personagens.apply {
             Picasso.get().load(image ).into(binding.ivDetalhe)
             binding.tvNameFieldPersonagem.text = name
             binding.tvStatusFieldPersonagem.text = status
             binding.tvSpeciesFieldPersonagem.text = species
             binding.tvGenderFieldPersonagem.text = gender
+            personagensStatus(personagens)
             (activity as HomeActivity).supportActionBar?.title = name
         }
     }
@@ -111,15 +108,4 @@ class DetalhesFragment : Fragment() {
     private fun pegarPersonagens(): PersonagensResult?{
         return arguments?.getParcelable(PERSONAGEM_KEY)
     }
-
-    private fun favorito(personagensResult: PersonagensResult){
-        binding.ivFavorite.setOnClickListener {
-            personagensResult.isFavorite = !personagensResult.isFavorite
-
-            val bundle = bundleOf("ATUALIZADO" to personagensResult)
-            NavHostFragment.findNavController(this)
-                .navigate(R.id.action_detalhesFragment_to_quadrinhosPersonagensRickAndMortyFragment)
-        }
-    }
-
 }

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import br.com.zup.desafiorickandmortyemsimcity.R
 import br.com.zup.desafiorickandmortyemsimcity.data.model.PersonagensResult
 import br.com.zup.desafiorickandmortyemsimcity.databinding.FragmentFavoriteBinding
-import br.com.zup.desafiorickandmortyemsimcity.ui.EMPTY_LIST_MSG
 import br.com.zup.desafiorickandmortyemsimcity.ui.PERSONAGEM_KEY
 import br.com.zup.desafiorickandmortyemsimcity.ui.favorite.viewmodel.FavoriteViewModel
 import br.com.zup.desafiorickandmortyemsimcity.ui.viewstate.ViewState
@@ -62,11 +61,6 @@ class FavoriteFragment : Fragment() {
                 }
                 is ViewState.EmptyList -> {
                     adapter.updateMovieList(it.data.toMutableList())
-                    Toast.makeText(
-                        context,
-                        EMPTY_LIST_MSG,
-                        Toast.LENGTH_LONG
-                    ).show()
                 }
                 else ->{}
             }

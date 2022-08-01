@@ -2,9 +2,7 @@ package br.com.zup.desafiorickandmortyemsimcity.ui.favorite.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import br.com.zup.desafiorickandmortyemsimcity.R
 import br.com.zup.desafiorickandmortyemsimcity.data.model.PersonagensResult
 import br.com.zup.desafiorickandmortyemsimcity.databinding.PersonagensItemBinding
 import br.com.zup.desafiorickandmortyemsimcity.ui.JPEG
@@ -29,12 +27,6 @@ class FavoritePersonagemAdapter(
             clickPersonagem(personagem)
             updateMovieList(personagemList)
         }
-//        holder.binding..setOnClickListener {
-//            personagem.isFavorite = !personagem.isFavorite
-//            clickDisfavor(personagem)
-//            personagemList.remove(personagem)
-//            notifyItemRemoved(position)
-//        }
     }
 
     override fun getItemCount() = personagemList.size
@@ -50,15 +42,6 @@ class FavoritePersonagemAdapter(
             Picasso.get().load(URL_BASE_IMG + personagensResult.id + JPEG )
                 .into(binding.ivRick)
             binding.nomePersonagens.text = personagensResult.name
-//            binding.ivFavorite.setImageDrawable(
-//                ContextCompat.getDrawable(
-//                    binding.root.context,
-//                    if (movieResult.isFavorite)
-//                        R.drawable.ic_favorite
-//                    else
-//                        R.drawable.ic_disfavor
-//                )
-//            )
-        }
+       }
     }
 }

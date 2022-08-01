@@ -1,10 +1,11 @@
-package br.com.zup.desafiorickandmortyemsimcity.ui
+package br.com.zup.desafiorickandmortyemsimcity.ui.splash.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.zup.desafiorickandmortyemsimcity.R
 import br.com.zup.desafiorickandmortyemsimcity.ui.home.view.HomeActivity
+import br.com.zup.desafiorickandmortyemsimcity.ui.splash.viewmodel.SplashActivityViewModel
 
 class SplashActivity : AppCompatActivity() {
 

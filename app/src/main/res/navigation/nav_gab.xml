@@ -28,13 +28,13 @@
     </fragment>
     <activity
         android:id="@+id/splashActivity"
-        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.SplashActivity"
+        android:name="br.com.zup.desafiorickandmortyemsimcity.ui.splash.view.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="br.com.zup.desafiorickandmortyemsimcity.ui.favorite.view.FavoriteFragment"
-        android:label="fragment_favorite"
+        android:label="Favoritos"
         tools:layout="@layout/fragment_favorite" >
         <action
             android:id="@+id/action_favoriteFragment_to_quadrinhosPersonagensRickAndMortyFragment"

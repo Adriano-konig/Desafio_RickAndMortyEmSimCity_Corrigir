@@ -1,4 +1,4 @@
-package br.com.zup.desafiorickandmortyemsimcity.ui
+package br.com.zup.desafiorickandmortyemsimcity.ui.splash.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
